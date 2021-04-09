@@ -1,8 +1,8 @@
 const display = document.querySelector('.display')
-// const btns = document.querySelectorAll('button')
+const btns = document.querySelectorAll('button')
 
-function calculator(obj) {
-  let pushed = obj.innerHTML
+function calculator() {
+  let pushed = this.innerHTML
   if (pushed == '=') {
     display.innerHTML = eval(display.innerHTML)
   } else if (pushed == 'AC') {
@@ -11,11 +11,9 @@ function calculator(obj) {
     display.innerHTML = pushed
   } else {
     display.innerHTML += pushed
-  }
-
-  
+  }  
 }
 
-// btns.forEach(btn => {
-//   btn.addEventListener('click', calculate)
-// });
+btns.forEach(btn => {
+  btn.addEventListener('click', calculator)
+});
